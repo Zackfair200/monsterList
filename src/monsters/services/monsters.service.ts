@@ -24,7 +24,7 @@ export class MonstersService {
       return await this.monsterModel.findById(id);
     } catch (error) {
       throw new Error(
-        `Error al buscar el monstruo con ID ${id}: ${error.message}`,
+        `Error when searching for monster with ID ${id}: ${error.message}`,
       );
     }
   }

@@ -12,7 +12,7 @@ import { MonstersService } from '../services/monsters.service';
 import { CreateMonsterDto } from '../dto/create-monster.dto';
 import { UpdateMonsterDto } from '../dto/update-monster.dto';
 import { MikeGuard } from '../guards/mike.guard';
-// import { JwtAuthGuard } from '../../auth/jwt-auth.guard';
+import { ValidationPipe } from '@nestjs/common';
 
 @Controller('monsters')
 export class MonstersController {
@@ -20,7 +20,7 @@ export class MonstersController {
 
   @Post()
   @UseGuards(MikeGuard)
-  create(@Body() createMonsterDto: CreateMonsterDto) {
+  create(@Body(new ValidationPipe()) createMonsterDto: CreateMonsterDto) {
     return this.monstersService.create(createMonsterDto);
   }
 
@@ -53,7 +53,7 @@ export class MonstersController {
       return await this.monstersService.addGold(id, amount);
     } catch (error) {
       throw new Error(
-        `Error al añadir oro al monstruo con ID ${id}: ${error.message}`,
+        `Error adding gold to monster with ID ${id}: ${error.message}`,
       );
     }
   }
@@ -65,7 +65,7 @@ export class MonstersController {
       return this.monstersService.removeGold(id, amount);
     } catch (error) {
       throw new Error(
-        `Error al retirar oro al monstruo con ID ${id}: ${error.message}`,
+        `Error when removing gold from monster with ID ${id}: ${error.message}`,
       );
     }
   }
