@@ -6,7 +6,7 @@ import { AppService } from './app.service';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://127.0.0.1/monsterdb'),
+    MongooseModule.forRoot('mongodb+srv://jandroponpal:61aXWAqNdBJLH4Ud@monsterdb.yrsh3hj.mongodb.net/?retryWrites=true&w=majority'),
     MonstersModule,
   ],
   controllers: [AppController],
