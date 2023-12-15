@@ -42,15 +42,4 @@ export class MonstersService {
     return await this.monsterModel.findByIdAndDelete(id).lean();
   }
 
-  async addGold(id: string, amount: number): Promise<Monster> {
-    const monster = await this.monsterModel.findById(id);
-    monster.goldBalance += amount;
-    return monster.save();
-  }
-
-  async removeGold(id: string, amount: number): Promise<Monster> {
-    const monster = await this.monsterModel.findById(id);
-    monster.goldBalance -= amount;
-    return monster.save();
-  }
 }

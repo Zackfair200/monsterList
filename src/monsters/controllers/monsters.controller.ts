@@ -16,7 +16,9 @@ import { ValidationPipe } from '@nestjs/common';
 
 @Controller('monsters')
 export class MonstersController {
-  constructor(private readonly monstersService: MonstersService) {}
+  constructor(
+    private readonly monstersService: MonstersService
+    ) {}
 
   @Post()
   @UseGuards(MikeGuard)
@@ -46,27 +48,4 @@ export class MonstersController {
     return this.monstersService.remove(id);
   }
 
-  @Patch(':id/add-gold')
-  @UseGuards(MikeGuard)
-  async addGold(@Param('id') id: string, @Body('amount') amount: number) {
-    try {
-      return await this.monstersService.addGold(id, amount);
-    } catch (error) {
-      throw new Error(
-        `Error adding gold to monster with ID ${id}: ${error.message}`,
-      );
-    }
-  }
-
-  @Patch(':id/remove-gold')
-  @UseGuards(MikeGuard)
-  async removeGold(@Param('id') id: string, @Body('amount') amount: number) {
-    try{
-      return this.monstersService.removeGold(id, amount);
-    } catch (error) {
-      throw new Error(
-        `Error when removing gold from monster with ID ${id}: ${error.message}`,
-      );
-    }
-  }
 }
