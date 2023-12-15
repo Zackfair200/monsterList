@@ -29,6 +29,51 @@ To use the application, follow these steps:
 5. Run the application:
   `npm start`
 
+## Endpoints from Api deployed at Render
+
+`Monsters`
+  Get All Monsters:
+  URL: https://monster-list-deploy.onrender.com/monsters
+
+  Get One Monster:
+  URL: https://monster-list-deploy.onrender.com/monsters/:id
+
+  Create Monster:
+  URL: https://monster-list-deploy.onrender.com/monsters
+  Body: {
+    "firstName": "name",
+    "lastName": "lastName",
+    "title": "tittle",
+    "gender": "female,male or other",
+    "description": "description",
+    "nationality": ["ES","US","PT","FR"...],
+    "image": "URL",
+    "goldBalance": 100,
+    "speed": 5.2,
+    "health": 105,
+    "secretNotes": "secretNote",
+    "monsterPassword": "yourMonsterPassword"
+  }(example)
+
+  Update Monster:
+  URL: https://monster-list-deploy.onrender.com/monsters/:id
+
+  Delete Monster:
+  URL: https://monster-list-deploy.onrender.com/monsters/:id
+
+`GOLD`
+  Add Gold to Monster:
+  URL: https://monster-list-deploy.onrender.com/gold/:id/add-gold
+  Body: { "amount": 10 } (example)
+
+  Remove Gold from Monster:
+  URL: https://monster-list-deploy.onrender.com/gold/:id/remove-gold
+  Body: { "amount": 5 } (example)
+
+# Personal Notes
+
+I have added a swagger to facilitate calls to the backend, you can find the swagger by adding /api to the end of the path.
+https://monster-list-deploy.onrender.com/api (example)
 
 # Personal Notes
 
