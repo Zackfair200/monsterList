@@ -15,7 +15,7 @@ To use the application, follow these steps:
 1. Clone the repository:
   ```bash
    git clone https://github.com/Zackfair200/monsterList
-
+  ```
 2. Manage Node.js version:
   `cd monster-management-app`
   `nvm use`
@@ -33,13 +33,18 @@ To use the application, follow these steps:
 
 `Monsters`
   Get All Monsters:
-  URL: https://monster-list-deploy.onrender.com/monsters
+
+  GET: https://monster-list-deploy.onrender.com/monsters
 
   Get One Monster:
-  URL: https://monster-list-deploy.onrender.com/monsters/:id
+
+  GET: https://monster-list-deploy.onrender.com/monsters/:id
 
   Create Monster:
-  URL: https://monster-list-deploy.onrender.com/monsters
+
+  POST: https://monster-list-deploy.onrender.com/monsters
+
+  ```
   Body: {
     "firstName": "name",
     "lastName": "lastName",
@@ -53,22 +58,31 @@ To use the application, follow these steps:
     "health": 105,
     "secretNotes": "secretNote",
     "monsterPassword": "yourMonsterPassword"
-  }(example)
+  }
+  ```
 
   Update Monster:
-  URL: https://monster-list-deploy.onrender.com/monsters/:id
+
+  PATCH: https://monster-list-deploy.onrender.com/monsters/:id
 
   Delete Monster:
-  URL: https://monster-list-deploy.onrender.com/monsters/:id
+
+  DELETE: https://monster-list-deploy.onrender.com/monsters/:id
 
 `GOLD`
   Add Gold to Monster:
-  URL: https://monster-list-deploy.onrender.com/gold/:id/add-gold
-  Body: { "amount": 10 } (example)
+
+  PATCH: https://monster-list-deploy.onrender.com/gold/:id/add-gold
+  ```
+  Body: { "amount": 10 }
+  ```
 
   Remove Gold from Monster:
-  URL: https://monster-list-deploy.onrender.com/gold/:id/remove-gold
-  Body: { "amount": 5 } (example)
+
+  PATCH: https://monster-list-deploy.onrender.com/gold/:id/remove-gold
+  ```
+  Body: { "amount": 5 }
+  ```
 
 # Personal Notes
 
